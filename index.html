@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Forca</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo da Forca</h1>
+
+
+    <div id="hangman-container">
+        <!-- Imagem base da forca -->
+        <img id="base" src="forca (1).png" alt="Base da forca">
+      
+        <!-- Partes do boneco (invisíveis no início) -->
+        <img id="cabeca" src="cabeca.png" class="boneco" style="display: none;">
+        <img id="pescoco" src="pescoco.png" class="boneco" style="display: none;">
+        <img id="corpo" src="corpo.png" class="boneco" style="display: none;">
+        <img id="braco-direito" src="bracoDireito.png" class="boneco" style="display: none;">
+        <img id="braco-esquerdo" src="BracoEsquerdo.png" class="boneco" style="display: none;">
+        <img id="perna-esquerda" src="pernaesquerda.png" class="boneco" style="display: none;">
+        <img id="perna-direita" src="pernadireita.png" class="boneco" style="display: none;">
+        <img id="perdeu" src="Perdeu.png" class="boneco" style="display: none;">
+      </div>
+<h2>Dica: Cor</h2>
+    <p id="word-display"></p>
+    <p>Erros: <span id="wrong-guesses"></span></p>
+    <p>Chances restantes: <span id="remaining-chances"></span></p>
+
+    <p>Digite uma letra:</p>
+    <input type="text" id="letter-input" maxlength="1" autofocus>
+    <button id="guess-button">Enviar</button>
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
