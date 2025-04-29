@@ -1,8 +1,9 @@
+
 const words = ["preto", "azul", "amarelo", "vermelho", "roxo", "marrom"];
 let chosenWord = words[Math.floor(Math.random() * words.length)];
 let displayedWord = Array(chosenWord.length).fill("_");
 let wrongGuesses = [];
-let remainingChances = 6;
+let remainingChances = 8;
 
 const wordDisplay = document.getElementById("word-display");
 const wrongGuessesDisplay = document.getElementById("wrong-guesses");
@@ -24,49 +25,52 @@ const partesBoneco = [
   "perdeu",
 ];
 
-document.getElementById("guess-button").addEventListener("click", () => {
-  const letra = document.getElementById("letter-input").value.toLowerCase();
-
-  // Simulação: erra sempre (substitua pela lógica real depois)
-  const letraErrada = true;
-
-  if (letraErrada) {
-    mostrarParteBoneco(erros);
-    erros++;
-  }
-
-  document.getElementById("letter-input").value = "";
-});
 
 function mostrarParteBoneco(erros) {
   if (erros < partesBoneco.length) {
-    document.getElementById(partesBoneco[erros]).style.display = "block";
+    const parte = document.getElementById(partesBoneco[erros]);
+    if (parte) {
+      parte.style.display = "block";
+    }
   } else {
-    document.getElementById("perdeu").style.display = "block";
+    const perdeu = document.getElementById("perdeu");
+    if (perdeu) {
+      perdeu.style.display = "block";
+    }
   }
 }
-
-
-
 
 function updateDisplay() {
   wordDisplay.textContent = displayedWord.join(" ");
   wrongGuessesDisplay.textContent = wrongGuesses.join(", ");
   remainingChancesDisplay.textContent = remainingChances;
-  hangmanImage.src = hangmanContainer[5 - remainingChances]; // VAI ATUALIZANDO CONFORME FOR ERRANDO
+ 
 }
 
 function checkGameStatus() {
+  const gameImage = document.getElementById("gameImage");
+
   if (remainingChances === 0) {
     messageDisplay.textContent = `Você perdeu! A palavra era: ${chosenWord}`;
     messageDisplay.style.color = "red";
+
+    // Trocar a imagem
+    gameImage.src = "Perdeu.png"; 
+
     guessButton.disabled = true;
+    letterInput.disabled = true;
+
   } else if (!displayedWord.includes("_")) {
     messageDisplay.textContent = "Você ganhou!";
     messageDisplay.style.color = "green";
+
+    gameImage.src = "ganhou.png"; // Caminho para imagem de vitória, se quiser
+
     guessButton.disabled = true;
+    letterInput.disabled = true;
   }
 }
+
 
 function guessLetter() {
   const letter = letterInput.value.toLowerCase();
@@ -85,6 +89,8 @@ function guessLetter() {
     if (!found) {
       wrongGuesses.push(letter);
       remainingChances--;
+      mostrarParteBoneco(erros);
+      erros++;
     }
 
     updateDisplay();
@@ -92,11 +98,10 @@ function guessLetter() {
   }
 }
 
+// Eventos
 guessButton.addEventListener("click", guessLetter);
 letterInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     guessLetter();
   }
 });
-
-updateDisplay();

@@ -18,9 +18,9 @@
   }
   
   .container {
-    background-color: rgb(13, 108, 121);
+    background-color: rgba(231, 128, 10, 0.61);
     padding: 50px;
-    border: 2px solid #ccc;
+    border: 2px solid #0a0202;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -34,6 +34,16 @@
     text-shadow: 1px 1px 2px rgb(red, green, blue);
 
   }
+
+  #word-display {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #1b1717;
+    
+
+  
+  }
+  
   
   h1 {
     color: black;
@@ -41,23 +51,18 @@
   
   
   }
-  h2{
-    color: rgb(0, 2, 0);
-    font-style: italic;
-    font-size: 30px;
-  }
   
-  #word-display {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
+
   #remaining-chances {
     font-weight: bold;
-    color: #ff0800;
-    font-size: 20px;
+    color: #e01e17;
+    background-color: #ecb911;
+    border: 2px solid #0a0202;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 30px;
     margin-bottom: 10px;
-    
+
   }
   
   button {
@@ -69,16 +74,28 @@
   }
   
   input {
-    padding: 5px;
-    font-size: 18px;
-    width: 50px;
+    padding:10px;
+    font-size: 30px;
+    width: 100px;
+    height: 40px;
     text-align: center;
+    border: 2px solid #e6c612;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #0a0202;
+
     
     
   }
   
   input:focus {
-    outline: none;
+    outline: invert;
+    outline-color: #ecd611;
+    outline-style: solid;
+    outline-width: 2px;
+    border: 2px solid #81f721;
+    box-shadow:0 0 5px rgb(red, green, blue);
+
   }
   
   #hangman-container {
@@ -88,62 +105,94 @@
   
   }
   
-  #hangman-container img {
+  #forca img {
     position: absolute;
-    top: 50px;
-    left: 170px;
-    width: 280px;
-    
+    top: 15%;
+    left: 200px;
+    width: 170px;
+    height: 240px;
+
+  
+  
+  }
+
+  #chao img {
+    position: absolute;
+    top: 38%;
+    left: 150px;
+    width: 400px;
+    height: 300px;
   }
   
   
   #cabeca {
-    top: 100px;
-    left: 110px;
-    width: 50px;
+    top: 2%;
+    left: 200px;
+    width: 150px;
+    border-radius: 100%;
+    position: absolute;
+  
+
+
   }
   
   #pescoco {
-    top: 1px;
-    left: 128px;
-    width: 10px;
-    height: 20px;
+    top: 1%;
+    left: 180px;
+    width: 200px;
+    position: absolute;
+
   }
   
   #corpo {
-    top: 150px;
-    left: 120px;
-    width: 30px;
-    height: 80px;
+    top: 15%;
+    left: 180px;
+    width: 200px;
+    position: absolute;
+  
   }
   
   #braco-direito {
-    top: 160px;
-    left: 150px;
-    width: 40px;
+    top: 14%;
+    left: 180px;
+    width: 200px;
+    position: absolute;
+    
+  
+
   }
   
   #braco-esquerdo {
-    top: 160px;
-    left: 80px;
-    width: 40px;
+    top: 20%;
+    left: 210px;
+    width: 200px;
+    position: absolute;
+
+   
   }
-  
-  #perna-direita {
-    top: 230px;
-    left: 140px;
-    width: 30px;
-  }
+
   
   #perna-esquerda {
-    top: 230px;
-    left: 100px;
-    width: 30px;
+    top: 25%;
+    left: 190px;
+    width: 200px;
+    position: absolute;
+   
+    
+  }
+
+  
+  #perna-direita {
+    top: 31%;
+    left: 185px;
+    width: 180px;
+    position: absolute;
+ 
   }
   
   #perdeu {
-    top: 50px;
-    left: 30px;
+    top: 5%;
+    left: 100px;
     width: 200px;
   }
   
