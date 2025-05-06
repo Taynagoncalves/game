@@ -6,8 +6,7 @@
   }
   
   body {
-    background-image: url(fundo2.png);
-    font-family: Arial, sans-serif;
+    background-image: url(funfo\ 6.jpg);
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -16,12 +15,11 @@
     background-size: cover;
     background-position: center;
   }
-  
+
   .container {
-    background-image: url(titulo.png);
-    background-color: rgba(231, 128, 10, 0.61);
+    background-color: rgba(172, 45, 140, 0.651);
     padding: 50px;
-    border: 2px solid #0a0202;
+    border: 2px solid #000000e0;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -29,22 +27,46 @@
     height: 900px;
     position: relative;
     overflow: hidden;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    text-shadow: 1px 1px 2px rgb(red, green, blue);
+
 
   }
+
+  #titulo {
+    position: absolute;
+    position: rotate (-5deg);
+    top: 5%;
+    left: 1%;
+    width: 500px;
+  }
+
 
   #word-display {
-    font-size: 50px;
-    margin-bottom: 10px;
+    font-size: 30x;
+    margin-bottom: 20px;
     color: #1b1717;
-    
-
+    font-weight: bold;
+    background-color: #e69808;
+    border: 2px solid #070a04;
+    border-radius: 5px;
   
   }
   
+  #wrong-guesses {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fc0303;
+    font-weight: bold;
+    background-color: #e69808;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+
+
+  }
   
   h1 {
     color: black;
@@ -57,7 +79,7 @@
   #remaining-chances {
     font-weight: bold;
     color: #e01e17;
-    background-color: #ecb911;
+    background-color: #ec9f11;
     border: 2px solid #0a0202;
     border-radius: 5px;
     padding: 10px;
@@ -71,7 +93,7 @@
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    background-color:chartreuse;
+    background-color:rgb(75, 245, 8);
   }
   
   input {
@@ -80,9 +102,9 @@
     width: 100px;
     height: 40px;
     text-align: center;
-    border: 2px solid #e6c612;
+    border: 2px solid #f8a201;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     color: #0a0202;
 
     
@@ -95,7 +117,6 @@
     outline-style: solid;
     outline-width: 2px;
     border: 2px solid #81f721;
-    box-shadow:0 0 5px rgb(red, green, blue);
 
   }
   
@@ -106,17 +127,12 @@
   
   }
 
-  #titulo img{
-    position: absolute;
-    top: 5%;
-    left: 100px;
-    width: 200px;
 
-  }
+
   
   #forca img {
     position: absolute;
-    top: 15%;
+    top: 9%;
     left: 200px;
     width: 170px;
     height: 240px;
@@ -200,10 +216,11 @@
   }
   
   #perdeu {
-    top: 6%;
-    left: 50px;
+    top: 7%;
+    left: 180px;
     width: 200px;
     position: absolute;
+
 
   }
   

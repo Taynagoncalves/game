@@ -2,8 +2,10 @@
 const words = ["preto", "azul", "amarelo", "vermelho", "roxo", "marrom"];
 let chosenWord = words[Math.floor(Math.random() * words.length)];
 let displayedWord = Array(chosenWord.length).fill("_");
+  
 let wrongGuesses = [];
 let remainingChances = 8;
+
 
 const wordDisplay = document.getElementById("word-display");
 const wrongGuessesDisplay = document.getElementById("wrong-guesses");
@@ -22,7 +24,6 @@ const partesBoneco = [
   "braco-esquerdo",
   "perna-esquerda",
   "perna-direita",
-  "perdeu",
 ];
 
 
@@ -64,7 +65,7 @@ function checkGameStatus() {
     messageDisplay.textContent = "Você ganhou!";
     messageDisplay.style.color = "green";
 
-    gameImage.src = "ganhou.png"; // Caminho para imagem de vitória, se quiser
+    gameImage.src = "ganhou.png"; 
 
     guessButton.disabled = true;
     letterInput.disabled = true;
