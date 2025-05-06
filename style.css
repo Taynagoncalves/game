@@ -18,6 +18,7 @@
   }
   
   .container {
+    background-image: url(titulo.png);
     background-color: rgba(231, 128, 10, 0.61);
     padding: 50px;
     border: 2px solid #0a0202;
@@ -103,6 +104,14 @@
     width: 600px;  
     height: 400px;
   
+  }
+
+  #titulo img{
+    position: absolute;
+    top: 5%;
+    left: 100px;
+    width: 200px;
+
   }
   
   #forca img {
@@ -191,9 +200,11 @@
   }
   
   #perdeu {
-    top: 5%;
-    left: 100px;
+    top: 6%;
+    left: 50px;
     width: 200px;
+    position: absolute;
+
   }
   
 
