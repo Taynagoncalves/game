@@ -6,8 +6,7 @@
   }
   
   body {
-    background-image: url(funfo\ 6.jpg);
-    background-color: transparent;
+    background-image: url(fundo.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +16,7 @@
   }
 
   .container {
-    background-color: rgba(172, 45, 140, 0.651);
+    background-color: rgba(255, 255, 255, 0.945);
     padding: 50px;
     border: 2px solid #000000e0;
     border-radius: 30px;
@@ -28,18 +27,50 @@
     position: relative;
     overflow: hidden;
     color: rgb(0, 0, 0);
-    font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
 
 
   }
 
+  
+  button {
+    position: absolute;
+    top: 82%;
+    left: 60%;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color:rgb(75, 245, 8);
+    font-size: 1em;
+  }
+
+  #restart-button {
+    position: relative;
+    top: 1%;
+    left: 15px;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #f1da08;
+    color: rgb(8, 8, 8);
+    transition: background-color 0.3s ease;
+    border: 2px solid #000000;
+    border-radius: 5px;
+  }
+  
+  #restart-button:hover {
+    background-color: #0dd438;
+  }
+  
+  
+
   #titulo {
     position: absolute;
-    position: rotate (-5deg);
-    top: 5%;
+    position: rotate ();
+    top: -3%;
     left: 1%;
-    width: 500px;
+    width: 450px;
   }
 
 
@@ -48,26 +79,20 @@
     margin-bottom: 20px;
     color: #1b1717;
     font-weight: bold;
-    background-color: #e69808;
-    border: 2px solid #070a04;
-    border-radius: 5px;
+
   
   }
   
   #wrong-guesses {
     font-size: 30px;
-    margin-bottom: 20px;
-    color: #fc0303;
-    font-weight: bold;
-    background-color: #e69808;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    padding: 10px;
+    color: #0a0505;
     text-align: center;
 
 
   }
   
+   
+
   h1 {
     color: black;
     font-size: 36px;
@@ -78,47 +103,26 @@
 
   #remaining-chances {
     font-weight: bold;
-    color: #e01e17;
-    background-color: #ec9f11;
-    border: 2px solid #0a0202;
+    color: #0a0202;
     border-radius: 5px;
     padding: 10px;
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 10px;
 
   }
   
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    background-color:rgb(75, 245, 8);
-  }
+
   
   input {
-    padding:10px;
-    font-size: 30px;
-    width: 100px;
-    height: 40px;
-    text-align: center;
-    border: 2px solid #f8a201;
-    border-radius: 5px;
-    background-color: #f7f7f7;
-    color: #0a0202;
+    position: absolute;
+    top: 82%;
+    left: 30%;
 
     
     
   }
+
   
-  input:focus {
-    outline: invert;
-    outline-color: #ecd611;
-    outline-style: solid;
-    outline-width: 2px;
-    border: 2px solid #81f721;
-
-  }
   
   #hangman-container {
     position: relative;
@@ -132,7 +136,7 @@
   
   #forca img {
     position: absolute;
-    top: 9%;
+    top: 12%;
     left: 200px;
     width: 170px;
     height: 240px;
@@ -145,7 +149,7 @@
     position: absolute;
     top: 38%;
     left: 150px;
-    width: 400px;
+    width: 500px;
     height: 300px;
   }
   

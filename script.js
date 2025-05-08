@@ -1,11 +1,5 @@
-
 const words = ["preto", "azul", "amarelo", "vermelho", "roxo", "marrom"];
-let chosenWord = words[Math.floor(Math.random() * words.length)];
-let displayedWord = Array(chosenWord.length).fill("_");
-  
-let wrongGuesses = [];
-let remainingChances = 8;
-
+let chosenWord, displayedWord, wrongGuesses, remainingChances, erros;
 
 const wordDisplay = document.getElementById("word-display");
 const wrongGuessesDisplay = document.getElementById("wrong-guesses");
@@ -13,9 +7,7 @@ const remainingChancesDisplay = document.getElementById("remaining-chances");
 const messageDisplay = document.getElementById("message");
 const guessButton = document.getElementById("guess-button");
 const letterInput = document.getElementById("letter-input");
-const hangmanImage = document.getElementById("hangman");
 
-let erros = 0;
 const partesBoneco = [
   "cabeca",
   "pescoco",
@@ -26,18 +18,11 @@ const partesBoneco = [
   "perna-direita",
 ];
 
-
 function mostrarParteBoneco(erros) {
   if (erros < partesBoneco.length) {
-    const parte = document.getElementById(partesBoneco[erros]);
-    if (parte) {
-      parte.style.display = "block";
-    }
+    document.getElementById(partesBoneco[erros]).style.display = "block";
   } else {
-    const perdeu = document.getElementById("perdeu");
-    if (perdeu) {
-      perdeu.style.display = "block";
-    }
+    document.getElementById("perdeu").style.display = "block";
   }
 }
 
@@ -45,39 +30,54 @@ function updateDisplay() {
   wordDisplay.textContent = displayedWord.join(" ");
   wrongGuessesDisplay.textContent = wrongGuesses.join(", ");
   remainingChancesDisplay.textContent = remainingChances;
- 
 }
 
 function checkGameStatus() {
-  const gameImage = document.getElementById("gameImage");
-
   if (remainingChances === 0) {
     messageDisplay.textContent = `Você perdeu! A palavra era: ${chosenWord}`;
     messageDisplay.style.color = "red";
-
-    // Trocar a imagem
-    gameImage.src = "Perdeu.png"; 
-
-    guessButton.disabled = true;
-    letterInput.disabled = true;
-
+    disableInput();
   } else if (!displayedWord.includes("_")) {
     messageDisplay.textContent = "Você ganhou!";
     messageDisplay.style.color = "green";
-
-    gameImage.src = "ganhou.png"; 
-
-    guessButton.disabled = true;
-    letterInput.disabled = true;
+    disableInput();
   }
 }
 
+function disableInput() {
+  guessButton.disabled = true;
+  letterInput.disabled = true;
+}
+
+function reiniciarJogo() {
+  chosenWord = words[Math.floor(Math.random() * words.length)];
+  displayedWord = Array(chosenWord.length).fill("_");
+  wrongGuesses = [];
+  remainingChances = 8;
+  erros = 0;
+
+  partesBoneco.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
+  document.getElementById("perdeu").style.display = "none";
+
+  messageDisplay.textContent = "";
+  messageDisplay.style.color = "#000";
+  guessButton.disabled = false;
+  letterInput.disabled = false;
+  letterInput.focus();
+
+  updateDisplay();
+}
 
 function guessLetter() {
   const letter = letterInput.value.toLowerCase();
   letterInput.value = "";
 
-  if (letter && !wrongGuesses.includes(letter) && !displayedWord.includes(letter)) {
+  if (!letter.match(/[a-zçãáâéêíóôõúü]/i)) return;
+
+  if (!wrongGuesses.includes(letter) && !displayedWord.includes(letter)) {
     let found = false;
 
     for (let i = 0; i < chosenWord.length; i++) {
@@ -90,8 +90,7 @@ function guessLetter() {
     if (!found) {
       wrongGuesses.push(letter);
       remainingChances--;
-      mostrarParteBoneco(erros);
-      erros++;
+      mostrarParteBoneco(erros++);
     }
 
     updateDisplay();
@@ -99,10 +98,10 @@ function guessLetter() {
   }
 }
 
-// Eventos
 guessButton.addEventListener("click", guessLetter);
-letterInput.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    guessLetter();
-  }
+letterInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") guessLetter();
 });
+document.getElementById("restart-button").addEventListener("click", reiniciarJogo);
+
+reiniciarJogo(); // Inicia o jogo ao carregar a página

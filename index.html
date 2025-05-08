@@ -8,9 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div id="titulo"> <img id="titulo" src="titulo.png"></div>
   <div class="container">
-
+ 
+    <div class="input-container">
+      <input type="text" placeholder="Digite aqui..." />
+    </div>
+    
  
     <div id="forca"> <img id="base" src="forca (1).png" alt="Base da forca"></div>
      <div id="chao"> <img id="chao" src="chao.png"></div>
@@ -31,14 +36,17 @@
       </div>
 
     <p id="word-display"></p>
-    <p>Erros: <span id="wrong-guesses"></span></p>
-    <p>Chances restantes: <span id="remaining-chances"></span></p>
+    <h5>Erros: <span id="wrong-guesses"></span></h5>
+    <h6>Chances restantes: <span id="remaining-chances"></span></h6>
+     
 
-    <p>Digite uma letra:</p>
     <br>
     <input type="text" id="letter-input" maxlength="1" autofocus>
     <button id="guess-button">Enviar</button>
     <p id="message"></p>
+
+    <button id="restart-button">Reiniciar Jogo</button>
+
   </div>
 
   <script src="script.js"></script>
