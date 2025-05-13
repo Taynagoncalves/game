@@ -9,18 +9,20 @@
 </head>
 <body>
   
-  <div id="titulo"> <img id="titulo" src="titulo.png"></div>
+
+
+<div id="tela-inicial">
+  <img id="imagem-inicial" src="inicial.png" alt="Logo do Jogo">
+  <button id="botao-jogar"> JOGAR </button>
+  
+</div>
+
+
   <div class="container">
- 
-    <div class="input-container">
-      <input type="text" placeholder="Digite aqui..." />
-    </div>
-    
- 
+
     <div id="forca"> <img id="base" src="forca (1).png" alt="Base da forca"></div>
      <div id="chao"> <img id="chao" src="chao.png"></div>
      
-
 
     <div id="hangman-container">
 
@@ -34,6 +36,8 @@
         <img id="perdeu" src="Perdeu.png" class="boneco" style="display: none;">
 
       </div>
+      <div class="dica" id="dica-palavra">Dica: Cor </div>
+
 
     <p id="word-display"></p>
     <h5>Erros: <span id="wrong-guesses"></span></h5>

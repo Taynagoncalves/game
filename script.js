@@ -1,3 +1,11 @@
+// Controle de visibilidade entre tela inicial e jogo
+document.getElementById("botao-jogar").addEventListener("click", () => {
+  document.getElementById("tela-inicial").style.display = "none";
+  document.getElementById("jogo").style.display = "block";
+  reiniciarJogo(); // começa o jogo ao clicar
+});
+
+
 const words = ["preto", "azul", "amarelo", "vermelho", "roxo", "marrom"];
 let chosenWord, displayedWord, wrongGuesses, remainingChances, erros;
 
@@ -7,6 +15,8 @@ const remainingChancesDisplay = document.getElementById("remaining-chances");
 const messageDisplay = document.getElementById("message");
 const guessButton = document.getElementById("guess-button");
 const letterInput = document.getElementById("letter-input");
+
+
 
 const partesBoneco = [
   "cabeca",
@@ -32,15 +42,23 @@ function updateDisplay() {
   remainingChancesDisplay.textContent = remainingChances;
 }
 
+
+
 function checkGameStatus() {
   if (remainingChances === 0) {
-    messageDisplay.textContent = `Você perdeu! A palavra era: ${chosenWord}`;
+    messageDisplay.textContent = `💥 Você perdeu! A palavra era: ${chosenWord}`;
     messageDisplay.style.color = "red";
+    messageDisplay.style.fontSize = "1.5rem";
+    messageDisplay.style.transition = "all 0.3s ease";
     disableInput();
+    showFireworks("red");
   } else if (!displayedWord.includes("_")) {
-    messageDisplay.textContent = "Você ganhou!";
+    messageDisplay.textContent = "🎉 Você ganhou!";
     messageDisplay.style.color = "green";
+    messageDisplay.style.fontSize = "1.5rem";
+    messageDisplay.style.transition = "all 0.3s ease";
     disableInput();
+    showFireworks("green");
   }
 }
 

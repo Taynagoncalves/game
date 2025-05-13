@@ -1,10 +1,59 @@
+#tela-inicial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #221404, #221404);
+  z-index: 1000; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+#tela-inicial > * {
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+#botao-jogar {
+  position: absolute;
+  left: 45%;
+  padding: 20px 60px;
+  font-size: 1.2rem;
+  color: #020000;
+  background-color: #e4ce0a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#botao-jogar:hover {
+  background-color: #2df006;
+  transform: scale(1.05);
+}
+
+
+
 * {
-    margin: 15px;
+    margin: 10;
     padding: 5px;
     box-sizing: border-box;
   
   }
-  
+
+
   body {
     background-image: url(fundo.jpg);
     display: flex;
@@ -16,7 +65,8 @@
   }
 
   .container {
-    background-color: rgba(255, 255, 255, 0.945);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.753);
     padding: 50px;
     border: 2px solid #000000e0;
     border-radius: 30px;
@@ -31,7 +81,22 @@
 
 
   }
-
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  .dica {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .palavra {
+    margin: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: green;
+  }
   
   button {
     position: absolute;
@@ -63,16 +128,6 @@
     background-color: #0dd438;
   }
   
-  
-
-  #titulo {
-    position: absolute;
-    position: rotate ();
-    top: -3%;
-    left: 1%;
-    width: 450px;
-  }
-
 
   #word-display {
     font-size: 30x;
@@ -84,8 +139,8 @@
   }
   
   #wrong-guesses {
-    font-size: 30px;
-    color: #0a0505;
+    font-size: 20px;
+    color: #f50707;
     text-align: center;
 
 
@@ -103,7 +158,7 @@
 
   #remaining-chances {
     font-weight: bold;
-    color: #0a0202;
+    color: #fd0505;
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;
@@ -136,8 +191,8 @@
   
   #forca img {
     position: absolute;
-    top: 12%;
-    left: 200px;
+    top: 5%;
+    left: 185px;
     width: 170px;
     height: 240px;
 
@@ -147,7 +202,7 @@
 
   #chao img {
     position: absolute;
-    top: 38%;
+    top: 28%;
     left: 150px;
     width: 500px;
     height: 300px;
