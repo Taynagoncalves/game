@@ -42,8 +42,8 @@
 #botao-jogar:hover {
   background-color: #2df006;
   transform: scale(1.05);
-}
 
+}
 
 
 * {
@@ -86,11 +86,36 @@
     text-align: center;
     margin: 20px;
   }
-  .dica {
-    margin: 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
+
+
+    #hint-button {
+    position: absolute;
+    top: -1%;
+    left: 100%;
+    padding: 15px 15px;
+    font-size: 1rem;
+    background-color: #2ff108;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+ }
+
+    #hint-button:hover {
+    background-color: #0dd438;
+}
+
+    #hint-display {
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #e40707;
+}
+
+
   .palavra {
     margin: 10px;
     font-size: 22px;
@@ -98,21 +123,38 @@
     color: green;
   }
   
-  button {
+  button { /*JOGAR TELA INICIAl*/
     position: absolute;
     top: 82%;
     left: 60%;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    background-color:rgb(75, 245, 8);
+    background-color:rgb(76, 201, 13);
     font-size: 1em;
   }
 
+
+   #guess-button{
+    position: absolute;
+    top: 79%;
+    left: 55%;
+    width: 70px;
+    height: 50px;
+    font-size: 80%;
+    background-color: #2ff108;
+   }
+
+   #guess-button:hover{
+    background-color:#0dd438;
+
+   }
+
+
   #restart-button {
     position: relative;
-    top: 1%;
-    left: 15px;
+    top: 3%;
+    left: 1%;
     width: 200px;
     padding: 10px 20px;
     font-size: 1em;
@@ -135,27 +177,15 @@
     color: #1b1717;
     font-weight: bold;
 
-  
   }
   
+
   #wrong-guesses {
     font-size: 20px;
     color: #f50707;
     text-align: center;
-
-
   }
   
-   
-
-  h1 {
-    color: black;
-    font-size: 36px;
-  
-  
-  }
-  
-
   #remaining-chances {
     font-weight: bold;
     color: #fd0505;
@@ -166,29 +196,25 @@
 
   }
   
-
-  
   input {
     position: absolute;
-    top: 82%;
-    left: 30%;
-
-    
-    
+    top: 80%;
+    left: 40%;
+    width: 80px;
+    height: 50px;
+  
   }
 
-  
   
   #hangman-container {
     position: relative;
     width: 600px;  
     height: 400px;
-  
   }
 
 
-
   
+  /* PARTES DO BONECO */
   #forca img {
     position: absolute;
     top: 5%;
@@ -196,8 +222,6 @@
     width: 170px;
     height: 240px;
 
-  
-  
   }
 
   #chao img {
@@ -208,15 +232,12 @@
     height: 300px;
   }
   
-  
   #cabeca {
     top: 2%;
     left: 200px;
     width: 150px;
     border-radius: 100%;
     position: absolute;
-  
-
 
   }
   
@@ -242,7 +263,6 @@
     width: 200px;
     position: absolute;
     
-  
 
   }
   
@@ -251,8 +271,6 @@
     left: 210px;
     width: 200px;
     position: absolute;
-
-   
   }
 
   
@@ -262,10 +280,8 @@
     width: 200px;
     position: absolute;
    
-    
   }
 
-  
   #perna-direita {
     top: 31%;
     left: 185px;

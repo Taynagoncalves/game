@@ -10,21 +10,21 @@
 <body>
   
 
-
 <div id="tela-inicial">
   <img id="imagem-inicial" src="inicial.png" alt="Logo do Jogo">
   <button id="botao-jogar"> JOGAR </button>
-  
 </div>
 
-
-  <div class="container">
-
+<div class="container">
     <div id="forca"> <img id="base" src="forca (1).png" alt="Base da forca"></div>
      <div id="chao"> <img id="chao" src="chao.png"></div>
      
 
-    <div id="hangman-container">
+<div id="hangman-container">
+
+<button id="hint-button">Dica</button>
+
+<div id="hint-display"></div>
 
         <img id="cabeca" src="cabeca.png" class="boneco" style="display: none;">
         <img id="pescoco" src="pescoco.png" class="boneco" style="display: none;">
@@ -36,21 +36,21 @@
         <img id="perdeu" src="Perdeu.png" class="boneco" style="display: none;">
 
       </div>
-      <div class="dica" id="dica-palavra">Dica: Cor </div>
+     
 
-
+  
     <p id="word-display"></p>
     <h5>Erros: <span id="wrong-guesses"></span></h5>
     <h6>Chances restantes: <span id="remaining-chances"></span></h6>
      
 
-    <br>
+ <br>
     <input type="text" id="letter-input" maxlength="1" autofocus>
     <button id="guess-button">Enviar</button>
     <p id="message"></p>
 
     <button id="restart-button">Reiniciar Jogo</button>
-
+   
   </div>
 
   <script src="script.js"></script>
