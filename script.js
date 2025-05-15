@@ -1,52 +1,62 @@
 
 document.getElementById("botao-jogar").addEventListener("click", () => {
   document.getElementById("tela-inicial").style.display = "none";
-  document.getElementById("jogo").style.display = "block";
+
   reiniciarJogo();
 });
 
 
 const words = [
-  { word: "preto", hint: "Cor escura." },
-  { word: "azul", hint: "Cor do céu." },
-  { word: "amarelo", hint: "Cor do sol." },
-  { word: "vermelho", hint: "Cor do fogo." },
-  { word: "roxo", hint: "Cor de uvas." },
-  { word: "marrom", hint: "Cor da terra." },
-  { word: "gato", hint: "Animal doméstico." },
-  { word: "cachorro", hint: "Animal leal e amigo." },
-  { word: "floresta", hint: "Ambiente com muitas árvores." },
-  { word: "mar", hint: "Corpo de água salgada." },
-  { word: "montanha", hint: "Grande elevação natural de terra." },
-  { word: "sol", hint: "Estrela que ilumina a Terra." },
-  { word: "lua", hint: "Satélite natural da Terra." },
-  { word: "livro", hint: "Objeto com páginas e conteúdo escrito." },
-  { word: "telefone", hint: "Aparelho para comunicação." },
-  { word: "computador", hint: "Dispositivo para processamento de dados." },
-  { word: "escola", hint: "Instituição de ensino." },
-  { word: "aluno", hint: "Pessoa que estuda." },
-  { word: "professor", hint: "Pessoa que ensina." },
-  { word: "futebol", hint: "Esporte popular com bola." },
-  { word: "basquete", hint: "Esporte com bola e cesta." },
-  { word: "vôlei", hint: "Esporte praticado em uma rede." },
-  { word: "café", hint: "Bebida estimulante feita de grãos torrados." },
-  { word: "chocolate", hint: "Doce feito com cacau." },
-  { word: "piano", hint: "Instrumento musical de teclas." },
-  { word: "violão", hint: "Instrumento musical de cordas." },
-  { word: "carro", hint: "Veículo motorizado de transporte." },
-  { word: "bicicleta", hint: "Veículo com duas rodas movido a pedais." },
-  { word: "avião", hint: "Veículo aéreo para transporte de pessoas." },
-  { word: "ônibus", hint: "Veículo de transporte coletivo." },
-  { word: "janela", hint: "Abertura na parede de um edifício." },
-  { word: "porta", hint: "Abertura que permite o acesso a um ambiente." },
-  { word: "cachoeira", hint: "Queda d'água em uma montanha." },
-  { word: "flor", hint: "Parte da planta que contém as sementes." },
-  { word: "árvore", hint: "Planta de grande porte com tronco." },
-  { word: "dado", hint: "Objeto usado em jogos de azar." },
-  { word: "xadrez", hint: "Jogo de tabuleiro com peças e estratégia." },
-  { word: "puzzle", hint: "Jogo de peças que formam uma imagem." },
-  { word: "rato", hint: "Roedor pequeno." },
-  { word: "coelho", hint: "Animal conhecido por suas orelhas grandes." }
+  { word: "bussola", hint: "Indica direcoes" },
+  { word: "travesseiro", hint: "Apoio para a cabeca ao dormir" },
+  { word: "escultura", hint: "Arte em pedra ou metal" },
+  { word: "gramatica", hint: "Regras da lingua" },
+  { word: "ferrovia", hint: "Caminho de trem" },
+  { word: "espelho", hint: "Reflete a imagem" },
+  { word: "planeta", hint: "Corpo celeste que orbita uma estrela" },
+  { word: "abacaxi", hint: "Fruta tropical com coroa" },
+  { word: "mochila", hint: "Bolsa de costas" },
+  { word: "oceano", hint: "Grande massa de agua salgada" },
+  { word: "arvore", hint: "Planta com tronco" },
+  { word: "dinossauro", hint: "Animal pre-historico" },
+  { word: "janela", hint: "Abertura para luz e ar" },
+  { word: "castelo", hint: "Construcao medieval" },
+  { word: "aviador", hint: "Piloto de aviao" },
+  { word: "desenho", hint: "Arte com lapis ou caneta" },
+  { word: "brinquedo", hint: "Objeto de diversao infantil" },
+  { word: "misterio", hint: "Algo nao explicado" },
+  { word: "girassol", hint: "Flor que segue o sol" },
+  { word: "telefone", hint: "Aparelho de comunicacao" },
+  { word: "escada", hint: "Serve para subir" },
+  { word: "almofada", hint: "Usada para conforto no sofa" },
+  { word: "corrente", hint: "Pode ser de metal ou de agua" },
+  { word: "pirata", hint: "Ladrao dos mares" },
+  { word: "esmeralda", hint: "Pedra preciosa verde" },
+  { word: "batalha", hint: "Conflito armado" },
+  { word: "enigma", hint: "Algo dificil de entender" },
+  { word: "lanterna", hint: "Fonte de luz portatil" },
+  { word: "geleira", hint: "Massa de gelo gigante" },
+  { word: "mistura", hint: "Combinacao de coisas" },
+  { word: "colmeia", hint: "Casa das abelhas" },
+  { word: "manivela", hint: "Peca que gira para mover algo" },
+  { word: "cordeiro", hint: "Filhote de ovelha" },
+  { word: "espirro", hint: "Acontece quando ha alergia" },
+  { word: "caverna", hint: "Buraco grande em montanha" },
+  { word: "ventania", hint: "Vento muito forte" },
+  { word: "caderno", hint: "Usado para escrever" },
+  { word: "escorrega", hint: "Brinquedo de descer" },
+  { word: "cometa", hint: "Corpo celeste com cauda brilhante" },
+  { word: "farol", hint: "Ajuda na navegacao" },
+  { word: "colete", hint: "Roupa sem mangas" },
+  { word: "trator", hint: "Veiculo agricola" },
+  { word: "moldura", hint: "Contorna um quadro ou foto" },
+  { word: "borracha", hint: "Apaga o que foi escrito" },
+  { word: "tartaruga", hint: "Animal com casco" },
+  { word: "telhado", hint: "Cobre uma casa" },
+  { word: "martelo", hint: "Usado para pregar" },
+  { word: "enxada", hint: "Ferramenta de agricultura" },
+  { word: "bicicleta", hint: "Veiculo de duas rodas" },
+  { word: "barulho", hint: "Som alto ou incomodo" }
 ];
 
 let chosenWord, displayedWord, wrongGuesses, remainingChances, erros, currentHint;
@@ -83,20 +93,31 @@ function updateDisplay() {
 
 
 function checkGameStatus() {
+  messageDisplay.classList.add("game-message"); 
+
   if (remainingChances === 0) {
     messageDisplay.textContent = `💥 Você perdeu! A palavra era: ${chosenWord}`;
     messageDisplay.style.color = "red";
     disableInput();
+    playSound("./audios/perdeu.mp3");
     showFireworks("red");
   } else if (!displayedWord.includes("_")) {
     messageDisplay.textContent = "🎉 Você ganhou!";
     messageDisplay.style.color = "green";
     disableInput();
+    playSound("./audios/vitoria.mp3");
     showFireworks("green");
   }
 }
 
-// Função para desabilitar a entrada do jogador
+
+function playSound(src) {
+  const audio = new Audio(src);
+  audio.play();
+  audio.volume = 0.5; 
+}
+
+
 function disableInput() {
   guessButton.disabled = true;
   letterInput.disabled = true;
@@ -170,7 +191,7 @@ function guessLetter() {
 
 // Função para mostrar a dica
 function mostrarDica() {
-  hintDisplay.textContent = `Dica: ${currentHint}`;
+  hintDisplay.textContent = `💡 ${currentHint}`;
 }
 
 // Eventos
@@ -182,4 +203,13 @@ hintButton.addEventListener("click", mostrarDica);
 document.getElementById("restart-button").addEventListener("click", reiniciarJogo);
 
 // Inicia o jogo
+reiniciarJogo();
+
+
+
+document.getElementById("sair-button").addEventListener("click", () => {
+document.getElementById("tela-inicial").style.display = "block";
+document.getElementById("message").style.display = "none";
+});
+
 reiniciarJogo();

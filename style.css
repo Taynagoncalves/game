@@ -29,7 +29,6 @@
   position: absolute;
   left: 45%;
   padding: 20px 60px;
-  font-size: 1.2rem;
   color: #020000;
   background-color: #e4ce0a;
   border: none;
@@ -45,12 +44,29 @@
 
 }
 
+ .game-message {
+  position: absolute;
+  top: 28%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+
 
 * {
     margin: 10;
     padding: 5px;
     box-sizing: border-box;
   
+  }
+
+  #letter-input{
+    font-size: 25px;
   }
 
 
@@ -66,7 +82,7 @@
 
   .container {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.753);
+    background-color: rgb(255, 255, 255);
     padding: 50px;
     border: 2px solid #000000e0;
     border-radius: 30px;
@@ -94,23 +110,27 @@
     left: 100%;
     padding: 15px 15px;
     font-size: 1rem;
-    background-color: #2ff108;
+    background-color: #f1da08;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    margin-left: 20px;
+    border-style:dotted;
+
+
  }
 
     #hint-button:hover {
-    background-color: #0dd438;
+    background-color: #ebfa1b;
 }
 
     #hint-display {
     position: absolute;
     top: 90%;
-    left: 35%;
-    font-size: 15px;
+    left: 30%;
+    font-size: 18px;
     margin-top: 10px;
     color: #e40707;
 }
@@ -142,7 +162,8 @@
     width: 70px;
     height: 50px;
     font-size: 80%;
-    background-color: #2ff108;
+    background-color: #07ee4086;
+    border-radius: 5px;
    }
 
    #guess-button:hover{
@@ -152,14 +173,14 @@
 
 
   #restart-button {
-    position: relative;
-    top: 3%;
-    left: 1%;
+    position: absolute;
+    top: 86%;
+    left: 40%;
     width: 200px;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    background-color: #f1da08;
+    background-color: #07ee4086;
     color: rgb(8, 8, 8);
     transition: background-color 0.3s ease;
     border: 2px solid #000000;
@@ -167,9 +188,23 @@
   }
   
   #restart-button:hover {
-    background-color: #0dd438;
+    background-color: #07f33a;
   }
   
+
+   #sair-button {
+    position: absolute;
+    top: 92%;
+    left: 46%;
+    width: 100px;
+    padding: 10px 20px;
+    background-color: #fd0505;
+    cursor: pointer;
+    border-radius: 8px;
+}
+   #sair-button:hover {
+    background-color: rgb(255, 251, 0);
+   }
 
   #word-display {
     font-size: 30x;
@@ -199,10 +234,12 @@
   input {
     position: absolute;
     top: 80%;
-    left: 40%;
+    left: 43%;
     width: 80px;
     height: 50px;
-  
+    border-radius: 12px;
+    border: 4px solid #0dd438;
+
   }
 
   
